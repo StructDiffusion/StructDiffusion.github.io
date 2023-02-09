@@ -88,7 +88,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">StructDiffusion: Object-Centric Diffusion for Semantic Rearrangement of Novel Objects</h1>
+          <h1 class="title is-1 publication-title">StructDiffusion: Language-Guided <br> Creation of Physically-Valid Structures <br> using Unseen Objects</h1>
         </div>
       </div>
     </div>
@@ -109,7 +109,7 @@
           </p>
           <p>
             We propose <span class="dnerf">StructDiffusion</span>, which combines a diffusion model and an object-centric transformer to construct
-            structures out of a single RGB-D image based on high-level language goals, such as <i>"set the table"</i> and <i>"make a line"</i>.
+            structures given partial-view point clouds and high-level language goals, such as <i>"set the table"</i> and <i>"make a line"</i>.
           </p>
           <p>
             <span class="dnerf">StructDiffusion</span> improves success rate on assembling physically-valid structures out of unseen objects
@@ -155,13 +155,15 @@
         <!-- <br> -->
         </div>
         <p>
-          Building semantically meaningful structures requires satisfying two different sets of constraints:
-          (1) we must place objects in the correct positions to satisfy the desired spatio-semantic relations;
-          (2) we must ensure that objects are not colliding and arrangements are structurally sound.
+          Building structures requires models that can reason about different constraints over where
+          objects should be at once (e.g., object geometry, language-driven task semantics, physics)
+          and generate solutions that respect all these constraints.
         </p>
         <br>
         <p>
-          We propose <span class="dnerf">StructDiffusion</span>, a single framework that jointly optimizes over these two, sometimes contrasting, constraints.
+          <span class="dnerf">StructDiffusion</span> consists of:
+          (1) an <i>object-centric, language-conditioned diffusion model</i>, which learns how to construct different types of multi-object structures from observations of novel objects and language instructions,
+          and (2) a <i>learned discriminator</i>, which drastically improves performance by rejecting samples violating physical constraints.
         </p>
         <br>
         <!--<p>-->
@@ -170,13 +172,12 @@
         <!--</p>-->
         <br>
 
-        <h3 class="title is-4">Combining Diffusion Model and Transformer for Object-Centric Prediction</h3>
+        <h3 class="title is-4">Generating Diverse Goals with Object-Centric Diffusion</h3>
         <div class="content has-text-justified">
         <!-- <br> -->
         </div>
         <p>We use unknown object instance segmentation to break our scene up into objects, as per prior work (e.g., <a href="https://arxiv.org/abs/2108.12062">[1]</a>, <a href="https://arxiv.org/abs/2106.01352">[2]</a>, <a href="https://arxiv.org/abs/2108.12062">[3]</a>).
-        Then, we use a multi-modal transformer to combine both word tokens and object encodings from <a href="https://arxiv.org/abs/2012.09688">Point Cloud Transformer</a> in order to make 6-DoF goal pose predictions.
-        These predictions are both refined iteratively via diffusion and selected with a discriminator model that learns to recognize unrealistic samples.</p>
+        Then, we use a multi-modal transformer to combine both word tokens and object encodings from <a href="https://arxiv.org/abs/2012.09688">Point Cloud Transformer</a> in order to make 6-DoF goal pose predictions.</p>
         <br>
         <img src="media/architecture.png" class="interpolation-image"
          alt="Architecture." />
