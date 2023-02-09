@@ -178,12 +178,12 @@
         Then, we use a multi-modal transformer to combine both word tokens and object encodings from <a href="https://arxiv.org/abs/2012.09688">Point Cloud Transformer</a> in order to make 6-DoF goal pose predictions.
         These predictions are both refined iteratively via diffusion and selected with a discriminator model that learns to recognize unrealistic samples.</p>
         <br>
-        <img src="media/figures/architecture.png" class="interpolation-image"
+        <img src="media/architecture.png" class="interpolation-image"
          alt="Architecture." />
         <br>
         <p>Our diffusion model is integrated with a transformer model that maintains an individual attention stream for each object. This object-centric approach allows us to focus on learning the interactions between objects based on their geometric features as well as the grounding of abstract concepts on spatio-semantic relations between objects (e.g., <i>large</i>, <i>circle</i>, <i>top</i>).</p>
         <br>
-        <img src="media/figures/diffusion_example.png" class="interpolation-image"
+        <img src="media/diffusion_example.png" class="interpolation-image"
          alt="Architecture." />
         <br>
         <p>We start from the last step of the reverse diffusion process and jointly predict goal poses for all objects in the scene. This allows our model to reason about object-object interactions in a generalizable way, which outperforms simply predicting goal poses from multi-modal inputs.</p>
