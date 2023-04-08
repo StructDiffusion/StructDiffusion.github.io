@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="StructDiffusion: Object-Centric Diffusion for Semantic Rearrangement of Novel Objects">
+  <meta name="keywords" content="Diffusion, Semantic Rearrangement, Transformer, Manipulation, Language Grounding">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StructDiffusion Supplementary Material</title>
+
+  <!--&lt;!&ndash; Global site tag (gtag.js) - Google Analytics &ndash;&gt;-->
+  <!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>-->
+  <!--<script>-->
+    <!--window.dataLayer = window.dataLayer || [];-->
+
+    <!--function gtag() {-->
+      <!--dataLayer.push(arguments);-->
+    <!--}-->
+
+    <!--gtag('js', new Date());-->
+
+    <!--gtag('config', 'G-PYVRSFMDRL');-->
+  <!--</script>-->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="../static/css/bulma.min.css">
+  <link rel="stylesheet" href="../static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="../static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="../static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="../static/css/index.css">
+  <!--<link rel="icon" href="./static/images/favicon.svg">-->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="../static/js/fontawesome.all.min.js"></script>
+  <script src="../static/js/bulma-carousel.min.js"></script>
+  <script src="../static/js/bulma-slider.min.js"></script>
+  <script src="../static/js/index.js"></script>
+</head>
+<body>
+
+<!--<nav class="navbar" role="navigation" aria-label="main navigation">-->
+  <!--<div class="navbar-brand">-->
+    <!--<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">-->
+      <!--<span aria-hidden="true"></span>-->
+      <!--<span aria-hidden="true"></span>-->
+      <!--<span aria-hidden="true"></span>-->
+    <!--</a>-->
+  <!--</div>-->
+  <!--<div class="navbar-menu">-->
+    <!--<div class="navbar-start" style="flex-grow: 1; justify-content: center;">-->
+      <!--<a class="navbar-item" href="https://keunhong.com">-->
+      <!--<span class="icon">-->
+          <!--<i class="fas fa-home"></i>-->
+      <!--</span>-->
+      <!--</a>-->
+
+      <!--<div class="navbar-item has-dropdown is-hoverable">-->
+        <!--<a class="navbar-link">-->
+          <!--More Research-->
+        <!--</a>-->
+        <!--<div class="navbar-dropdown">-->
+          <!--<a class="navbar-item" href="https://hypernerf.github.io">-->
+            <!--HyperNeRF-->
+          <!--</a>-->
+          <!--<a class="navbar-item" href="https://nerfies.github.io">-->
+            <!--Nerfies-->
+          <!--</a>-->
+          <!--<a class="navbar-item" href="https://latentfusion.github.io">-->
+            <!--LatentFusion-->
+          <!--</a>-->
+          <!--<a class="navbar-item" href="https://photoshape.github.io">-->
+            <!--PhotoShape-->
+          <!--</a>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+
+  <!--</div>-->
+<!--</nav>-->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Supplementary Material</h2>
+        <div class="content has-text-justified">
+          <p>
+            Dropping objects from 3cm above helps improve real-world success rates;
+            it’s an arbitrary choice to help avoid motion planning problems that are out of scope.
+            We did experiments with the actual predicted poses, and saw that <span class="dnerf">StructDiffusion</span> still achieves the best
+            performance with a 70.0% success rate (vs. 54.0% for the next best). We will add more analysis to the final paper.
+          </p>
+          <br>
+
+          <figure>
+            <img src="../media/baselines.jpg" class="interpolation-image"
+                 alt="Baselines." />
+            <figcaption><b>Supplementary Fig. 1:</b> Comparing StructDiffusion with baseline methods.
+              This figure reproduces the simulation experiments presented in the paper (i.e., Fig. 5 and Fig. 6) but uses the actual predicted poses without the 3cm offset. </figcaption>
+          </figure>
+          <br>
+
+          <figure>
+                      <img src="../media/offset_before_after.jpg" class="interpolation-image"
+         alt="Comparison" style="width:70%" />
+            <figcaption><b>Supplementary Fig. 2:</b> Comparing the performance of models averaged over different structure classes, with and without the 3cm offset.
+            The performance of baseline methods decreases after removing the offset, but our method maintains a high success rate. </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+</body>
+</html>
